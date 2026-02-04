@@ -54,8 +54,8 @@ Each object has:
 
 Example:
 
-* `CaseTrigger` → Entry point
-* `CaseTriggerHandler` → Business logic
+* `AccountTrigger` → Entry point
+* `AccountTriggerHandler` → Business logic
 
 ---
 
@@ -68,9 +68,9 @@ force-app
         └── classes
             ├── TriggerHandler.cls
             ├── TriggerDispatcher.cls
-            ├── CaseTriggerHandler.cls
+            ├── AccountTrigger.cls
         └── triggers
-            └── CaseTrigger.trigger
+            └── AccountTrigger.trigger
 ```
 
 ---
@@ -82,8 +82,8 @@ force-app
 The trigger contains no business logic. It only invokes the dispatcher:
 
 ```
-trigger CaseTrigger on Case (...) {
-    TriggerDispatcher.Run(new CaseTriggerHandler());
+trigger AccountTrigger on Account (...) {
+    TriggerDispatcher.Run(new AccountTriggerHandler());
 }
 ```
 
